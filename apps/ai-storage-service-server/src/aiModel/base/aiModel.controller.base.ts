@@ -33,11 +33,19 @@ export class AiModelControllerBase {
     return await this.service.createAiModel({
       data: data,
       select: {
+        architecture: true,
+        architectureData: true,
         createdAt: true,
+        creationTimestamp: true,
         description: true,
         filePath: true,
         id: true,
+        modelId: true,
+        trainingData: true,
+        trainingDataDescription: true,
         updatedAt: true,
+        version: true,
+        versionData: true,
       },
     });
   }
@@ -50,11 +58,19 @@ export class AiModelControllerBase {
     return this.service.aiModels({
       ...args,
       select: {
+        architecture: true,
+        architectureData: true,
         createdAt: true,
+        creationTimestamp: true,
         description: true,
         filePath: true,
         id: true,
+        modelId: true,
+        trainingData: true,
+        trainingDataDescription: true,
         updatedAt: true,
+        version: true,
+        versionData: true,
       },
     });
   }
@@ -68,11 +84,19 @@ export class AiModelControllerBase {
     const result = await this.service.aiModel({
       where: params,
       select: {
+        architecture: true,
+        architectureData: true,
         createdAt: true,
+        creationTimestamp: true,
         description: true,
         filePath: true,
         id: true,
+        modelId: true,
+        trainingData: true,
+        trainingDataDescription: true,
         updatedAt: true,
+        version: true,
+        versionData: true,
       },
     });
     if (result === null) {
@@ -95,11 +119,19 @@ export class AiModelControllerBase {
         where: params,
         data: data,
         select: {
+          architecture: true,
+          architectureData: true,
           createdAt: true,
+          creationTimestamp: true,
           description: true,
           filePath: true,
           id: true,
+          modelId: true,
+          trainingData: true,
+          trainingDataDescription: true,
           updatedAt: true,
+          version: true,
+          versionData: true,
         },
       });
     } catch (error) {
@@ -122,11 +154,19 @@ export class AiModelControllerBase {
       return await this.service.deleteAiModel({
         where: params,
         select: {
+          architecture: true,
+          architectureData: true,
           createdAt: true,
+          creationTimestamp: true,
           description: true,
           filePath: true,
           id: true,
+          modelId: true,
+          trainingData: true,
+          trainingDataDescription: true,
           updatedAt: true,
+          version: true,
+          versionData: true,
         },
       });
     } catch (error) {

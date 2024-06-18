@@ -18,34 +18,66 @@ import { AiModelService } from "../aiModel.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  architecture: "exampleArchitecture",
+  architectureData: "exampleArchitectureData",
   createdAt: new Date(),
+  creationTimestamp: new Date(),
   description: "exampleDescription",
   filePath: "exampleFilePath",
   id: "exampleId",
+  modelId: "exampleModelId",
+  trainingData: "exampleTrainingData",
+  trainingDataDescription: "exampleTrainingDataDescription",
   updatedAt: new Date(),
+  version: "exampleVersion",
+  versionData: "exampleVersionData",
 };
 const CREATE_RESULT = {
+  architecture: "exampleArchitecture",
+  architectureData: "exampleArchitectureData",
   createdAt: new Date(),
+  creationTimestamp: new Date(),
   description: "exampleDescription",
   filePath: "exampleFilePath",
   id: "exampleId",
+  modelId: "exampleModelId",
+  trainingData: "exampleTrainingData",
+  trainingDataDescription: "exampleTrainingDataDescription",
   updatedAt: new Date(),
+  version: "exampleVersion",
+  versionData: "exampleVersionData",
 };
 const FIND_MANY_RESULT = [
   {
+    architecture: "exampleArchitecture",
+    architectureData: "exampleArchitectureData",
     createdAt: new Date(),
+    creationTimestamp: new Date(),
     description: "exampleDescription",
     filePath: "exampleFilePath",
     id: "exampleId",
+    modelId: "exampleModelId",
+    trainingData: "exampleTrainingData",
+    trainingDataDescription: "exampleTrainingDataDescription",
     updatedAt: new Date(),
+    version: "exampleVersion",
+    versionData: "exampleVersionData",
   },
 ];
 const FIND_ONE_RESULT = {
+  architecture: "exampleArchitecture",
+  architectureData: "exampleArchitectureData",
   createdAt: new Date(),
+  creationTimestamp: new Date(),
   description: "exampleDescription",
   filePath: "exampleFilePath",
   id: "exampleId",
+  modelId: "exampleModelId",
+  trainingData: "exampleTrainingData",
+  trainingDataDescription: "exampleTrainingDataDescription",
   updatedAt: new Date(),
+  version: "exampleVersion",
+  versionData: "exampleVersionData",
 };
 
 const service = {
@@ -131,6 +163,7 @@ describe("AiModel", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        creationTimestamp: CREATE_RESULT.creationTimestamp.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -143,6 +176,8 @@ describe("AiModel", () => {
         {
           ...FIND_MANY_RESULT[0],
           createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
+          creationTimestamp:
+            FIND_MANY_RESULT[0].creationTimestamp.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
         },
       ]);
@@ -166,6 +201,7 @@ describe("AiModel", () => {
       .expect({
         ...FIND_ONE_RESULT,
         createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
+        creationTimestamp: FIND_ONE_RESULT.creationTimestamp.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -179,6 +215,7 @@ describe("AiModel", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        creationTimestamp: CREATE_RESULT.creationTimestamp.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       })
       .then(function () {

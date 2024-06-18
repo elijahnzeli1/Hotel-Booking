@@ -26,11 +26,19 @@ model Metadata {
 }
 
 model AiModel {
-  createdAt   DateTime @default(now())
-  description String?
-  filePath    String?
-  id          String   @id @default(cuid())
-  updatedAt   DateTime @updatedAt
+  architecture            String?
+  architectureData        String?
+  createdAt               DateTime  @default(now())
+  creationTimestamp       DateTime?
+  description             String?
+  filePath                String?
+  id                      String    @id @default(cuid())
+  modelId                 String?
+  trainingData            String?
+  trainingDataDescription String?
+  updatedAt               DateTime  @updatedAt
+  version                 String?
+  versionData             String?
 }
 
 model Model {
