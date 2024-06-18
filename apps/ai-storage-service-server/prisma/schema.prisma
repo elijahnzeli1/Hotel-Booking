@@ -1,0 +1,50 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Video {
+  createdAt  DateTime @default(now())
+  filePath   String?
+  id         String   @id @default(cuid())
+  metadata   String?
+  thumbnails String?
+  updatedAt  DateTime @updatedAt
+}
+
+model Metadata {
+  attributeName  String?
+  attributeValue String?
+  createdAt      DateTime @default(now())
+  id             String   @id @default(cuid())
+  itemId         String?
+  updatedAt      DateTime @updatedAt
+}
+
+model AiModel {
+  architecture            String?
+  architectureData        String?
+  createdAt               DateTime  @default(now())
+  creationTimestamp       DateTime?
+  description             String?
+  filePath                String?
+  id                      String    @id @default(cuid())
+  modelId                 String?
+  trainingData            String?
+  trainingDataDescription String?
+  updatedAt               DateTime  @updatedAt
+  version                 String?
+  versionData             String?
+}
+
+model Model {
+  createdAt DateTime @default(now())
+  filePath  String?
+  id        String   @id @default(cuid())
+  metadata  String?
+  updatedAt DateTime @updatedAt
+}
